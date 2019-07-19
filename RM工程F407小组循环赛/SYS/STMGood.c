@@ -148,10 +148,10 @@ void multi4(int n)
 void multi5(int n)
 {
 /*******¬Î≈Ã÷µ*******/
-	TPL = xx[1];
+//	TPL = xx[1];
 	TPR = xx[2];
 //	TP = xx[3];
-	printf("TPL=%f\r\n",TPL);
+//	printf("TPL=%f\r\n",TPL);
 	printf("TPR=%f\r\n",TPR);
 //	printf("TP=%f\r\n",TP);
 }

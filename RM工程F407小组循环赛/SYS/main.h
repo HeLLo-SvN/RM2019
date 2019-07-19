@@ -56,10 +56,12 @@
 #define Grab_Value1 43000   //竖立
 #define Grab_Value2 94000   //取弹
 #define Grab_Value3 5000    //复位
-#define Rotate_Value1 -25000    //弹出弹药箱
-#define Rotate_Value2 -15000       //缓冲复位
-#define Rotate_Value3 -10000
-#define Rotate_Value4 -5000
-#define Rotate_Value5 1500        //0
+/*总决赛将弹出弹药箱部分改为气缸结构*/
+/*取消分区赛中基于电机结构的缓冲处理*/
+//#define Rotate_Value1 -25000    //弹出弹药箱
+//#define Rotate_Value2 -15000       //缓冲复位
+//#define Rotate_Value3 -10000
+//#define Rotate_Value4 -5000
+//#define Rotate_Value5 1500        //0
 
 #endif

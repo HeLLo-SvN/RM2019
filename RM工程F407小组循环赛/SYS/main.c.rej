@@ -1,0 +1,10 @@
+diff a/RM工程F407小组循环赛/SYS/main.c b/RM工程F407小组循环赛/SYS/main.c	(rejected hunks)
+@@ -42,7 +42,7 @@
+ 	
+            LED_BLUE_TOGGLE();
+ 	
+-	         Rc_Checking();//����������׼���Լ�
++//	         Rc_Checking();//����������׼���Լ�
+ 
+ //	Servo_Reset();//����ָ���������ʱʹ��
+ 	

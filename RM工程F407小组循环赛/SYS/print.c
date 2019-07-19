@@ -123,32 +123,32 @@ void Print_Test(void){
 //	printf("F_GRAB_POSITION=%d\r\n",F_GRAB_POSITION);
 /************************升降测试************************/		
 //--	printf("targetTL=%d\r\n",T_LIFT_POSITION_L);
-//	printf("targetTR=%d\r\n",T_LIFT_POSITION_R);
-//	
-//	printf("feedbackPL1=%d\r\n",B_P_LIFT_L);
-//	printf("feedbackPL2=%d\r\n",LIFT_POSITION_L);
-//	printf("feedbackVL=%d\r\n",B_V_LIFT_L);
-//		
-//	printf("feedbackPR1=%d\r\n",B_P_LIFT_R);
-//	printf("feedbackPR2=%d\r\n",LIFT_POSITION_R);
-//	printf("feedbackVR=%d\r\n",B_V_LIFT_R);
-//	
+	printf("targetTR=%d\r\n",T_LIFT_POSITION_R);
+	
+	printf("feedbackPL1=%d\r\n",B_P_LIFT_L);
+	printf("feedbackPL2=%d\r\n",LIFT_POSITION_L);
+	printf("feedbackVL=%d\r\n",B_V_LIFT_L);
+		
+	printf("feedbackPR1=%d\r\n",B_P_LIFT_R);
+	printf("feedbackPR2=%d\r\n",LIFT_POSITION_R);
+	printf("feedbackVR=%d\r\n",B_V_LIFT_R);
+	
 ////--	printf("LeftEx.errNow=%f\r\n",lift_L_Ex.errNow);
 ////--    printf("LeftIn.errNow=%f\r\n",lift_L_In.errNow);
 
-//	printf("RightEx.errNow=%f\r\n",lift_R_Ex.errNow);
-//  printf("RightIn.errNow=%f\r\n",lift_R_In.errNow);
+	printf("RightEx.errNow=%f\r\n",lift_R_Ex.errNow);
+    printf("RightIn.errNow=%f\r\n",lift_R_In.errNow);
 
 ////--	printf("lift_L_Ex.ctrOut=%f\r\n",lift_L_Ex.ctrOut);
 ////--	printf("lift_L_In.ctrOut=%f\r\n",lift_L_In.ctrOut);
-//	
-//	printf("lift_R_Ex.ctrOut=%f\r\n",lift_R_Ex.ctrOut);
-//	printf("lift_R_In.ctrOut=%f\r\n",lift_R_In.ctrOut);
-//	
-//	printf("F_LIFT_POSITION_R=%d\r\n",F_LIFT_POSITION_R);
-//	printf("F_LIFT_POSITION_L=%d\r\n",F_LIFT_POSITION_L);
 	
-/************************翻转测试************************/	
+	printf("lift_R_Ex.ctrOut=%f\r\n",lift_R_Ex.ctrOut);
+	printf("lift_R_In.ctrOut=%f\r\n",lift_R_In.ctrOut);
+	
+	printf("F_LIFT_POSITION_R=%d\r\n",F_LIFT_POSITION_R);
+	printf("F_LIFT_POSITION_L=%d\r\n",F_LIFT_POSITION_L);
+	
+/************************翻转测试************************/	//总决赛取消此功能
 //  printf("targetTRo=%d\r\n",T_ROTATE_POSITION);
 //	
 //	printf("feedbackP1=%d\r\n",B_P_ROTATE);

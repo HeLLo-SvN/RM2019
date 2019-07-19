@@ -396,7 +396,7 @@ void Mode_Front(void)
 	if(un_T_F_lock9==0){
 	  if(continuity7==0){	
 	    if(un_time_count>5){
-	        T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
+//	        T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
 			
 			continuity7=1;
 									
@@ -414,28 +414,28 @@ void Mode_Front(void)
 	   if(buffer_lock5==0){
         if(un_time_count>60){
            if(buffer_lock6==0){
-	        T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
+//	        T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
 			   buffer_lock6=1;
 			   buffer_lock7=0;
 		   }
 		}
 		if(un_time_count>70){
 		   if(buffer_lock7==0){
-		    T_ROTATE_POSITION = Rotate_Value3;
+//		    T_ROTATE_POSITION = Rotate_Value3;
 			   buffer_lock7=1;
 			   buffer_lock8=0;
 		   }	
 		}
 		if(un_time_count>80){
 		   if(buffer_lock8==0){
-		    T_ROTATE_POSITION = Rotate_Value4;
+//		    T_ROTATE_POSITION = Rotate_Value4;
 			   buffer_lock8=1;
 			   buffer_lock9=0;
 		   }
 		}
         if(un_time_count>90){
            if(buffer_lock9==0){		
-	        T_ROTATE_POSITION = Rotate_Value5;
+//	        T_ROTATE_POSITION = Rotate_Value5;
 			  
             buffer_lock9=1;
 			buffer_lock5=1;
@@ -543,7 +543,7 @@ void Mode_Front(void)
 	   if(continuity14==0){	
 		if(un_time_count>20){  //10
 			
-			T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
+//			T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
 			
 			continuity14=1;
 			
@@ -562,14 +562,14 @@ void Mode_Front(void)
       if(buffer_lock10==0){	
 	   if(un_time_count>70){
 	      if(buffer_lock11==0){
-	       T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
+//	       T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
 			  buffer_lock11=1;
 			  buffer_lock12=0;
 		  }
 	   }
 	   if(un_time_count>80){
 		  if(buffer_lock12==0){
-		   T_ROTATE_POSITION = Rotate_Value3;
+//		   T_ROTATE_POSITION = Rotate_Value3;
 			  buffer_lock12=1;
 			  buffer_lock13=0;
 		  }
@@ -577,7 +577,7 @@ void Mode_Front(void)
 	   }
 	   if(un_time_count>90){
 		  if(buffer_lock13==0){
-		   T_ROTATE_POSITION = Rotate_Value4;
+//		   T_ROTATE_POSITION = Rotate_Value4;
 			  buffer_lock13=1;
 			  buffer_lock14=0;
 		  }
@@ -585,7 +585,7 @@ void Mode_Front(void)
 	   }
 	   if(un_time_count>100){
 		  if(buffer_lock14==0){
-           T_ROTATE_POSITION = Rotate_Value5;
+//          T_ROTATE_POSITION = Rotate_Value5;
 			  buffer_lock14=1;
 			  }
 		      			  
@@ -793,7 +793,7 @@ if(deadlock5==0){
 	   if(continuity22==0){	
 		if(N_time_count>30){
 						
-			T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
+//			T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
 			
 			continuity22=1;
 						
@@ -810,14 +810,14 @@ if(deadlock5==0){
 	  if(buffer_lock==0){
 	   if(N_time_count>70){
 	        if(buffer_lock1==0){
-	        T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
+//	        T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
                   buffer_lock1=1;
 				  buffer_lock2=0;
 			}
 	   }
 	   if(N_time_count>80){
 		   if(buffer_lock2==0){
-		    T_ROTATE_POSITION = Rotate_Value3;
+//		    T_ROTATE_POSITION = Rotate_Value3;
 			   buffer_lock2=1;
 			   buffer_lock3=0;
 			   
@@ -825,14 +825,14 @@ if(deadlock5==0){
 	   }
        if(N_time_count>90){
 		   if(buffer_lock3==0){
-		    T_ROTATE_POSITION = Rotate_Value4;
+//		    T_ROTATE_POSITION = Rotate_Value4;
 			   buffer_lock3=1;
 			   buffer_lock4=0;
 		   }
 	   }
 	   if(N_time_count>100){
 		   if(buffer_lock4==0){
-		    T_ROTATE_POSITION = Rotate_Value5;
+//		    T_ROTATE_POSITION = Rotate_Value5;
 		   
 		   un_O_F_lock9=1;
 		   N_time_count=0;

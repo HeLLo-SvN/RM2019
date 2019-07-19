@@ -23,26 +23,27 @@ USART2_Configuration();
 Touch_Switch_Configuration();
 Grabpid_Init();
 Liftpid_Init();
-Rotatepid_Init();
+//Rotatepid_Init();
 	
-CAN1_Configuration();
 TIM7_Configuration();
-CAN2_Configuration();
 TIM6_Configuration();
+
+CAN1_Configuration();
+CAN2_Configuration();
 	
 TIM7_Start();
 TIM6_Start();
 
 while(1)
 {   
-//          delay_ms(300);//打印时所需系统延时
-	        delay_ms(35);
+          delay_ms(300);//打印时所需系统延时
+//	        delay_ms(35);
 /******************舵机初始化******************/				
 		Send_Servo_Position();	
 	
-           LED_BLUE_TOGGLE();
+//          LED_BLUE_TOGGLE();
 	
-	         Rc_Checking();//开场三分钟准备自检
+//	         Rc_Checking();//开场三分钟准备自检
 
 //	Servo_Reset();//舵机恢复出厂设置时使用
 	

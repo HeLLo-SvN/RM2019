@@ -8,6 +8,7 @@ int grab_baseline =0;
 int check_lock=1;//自检锁定标志位
 
 void Grab_Self_Checking(void){
+		
    if(check_lock==1){
 	int claw_check=Claw_Touch();
 	

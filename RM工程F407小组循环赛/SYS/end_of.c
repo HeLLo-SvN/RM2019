@@ -274,22 +274,22 @@ void Action_Resetting(void)
               Contraction();
 			 contraction_lock=0;
 			 }
-/********判断弹射装置是否复位********/        
-       if(T_ROTATE_POSITION==Rotate_Value1){
-	     T_ROTATE_POSITION=Rotate_Value2;
-	   }
-	   if(T_ROTATE_POSITION==Rotate_Value2){
-	     T_ROTATE_POSITION=Rotate_Value3;
-	   }
-	   if(T_ROTATE_POSITION==Rotate_Value3){
-	     T_ROTATE_POSITION=Rotate_Value4;
-	   }
-	   if(T_ROTATE_POSITION==Rotate_Value4){
-	     T_ROTATE_POSITION=Rotate_Value5;
-	   }
-	   if(T_ROTATE_POSITION==Rotate_Value5){
-	     T_ROTATE_POSITION=Rotate_Value5;
-	   }
+///********判断弹射装置是否复位********/    //总决赛取消此方式扔弹药箱    
+//       if(T_ROTATE_POSITION==Rotate_Value1){
+//	     T_ROTATE_POSITION=Rotate_Value2;
+//	   }
+//	   if(T_ROTATE_POSITION==Rotate_Value2){
+//	     T_ROTATE_POSITION=Rotate_Value3;
+//	   }
+//	   if(T_ROTATE_POSITION==Rotate_Value3){
+//	     T_ROTATE_POSITION=Rotate_Value4;
+//	   }
+//	   if(T_ROTATE_POSITION==Rotate_Value4){
+//	     T_ROTATE_POSITION=Rotate_Value5;
+//	   }
+//	   if(T_ROTATE_POSITION==Rotate_Value5){
+//	     T_ROTATE_POSITION=Rotate_Value5;
+//	   }
 				
 ///********判断横移装置是否复位********/ 
 //	    Toward_Right();

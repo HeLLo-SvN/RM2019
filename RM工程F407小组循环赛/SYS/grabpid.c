@@ -7,6 +7,8 @@ extern int32_t GRAB_POSITION;
 int32_t T_GRAB_POSITION;
 extern int16_t B_V_GRAB;
 int32_t F_GRAB_POSITION;
+/*总决赛将翻转变量归并为抓取的从动变量*/
+extern int32_t F_ROTATE_POSITION;
 
 extern double P2;
 extern double I2;
@@ -75,4 +77,5 @@ void Grabpid_Configuration(void)
     PID_AbsoluteMode(&grab_In);
 	F_GRAB_POSITION = grab_In.ctrOut;
 	
+	F_ROTATE_POSITION = -grab_In.ctrOut;
 }

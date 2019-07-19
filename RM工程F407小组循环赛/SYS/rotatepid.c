@@ -18,8 +18,6 @@ extern double D3;
 
 extern double TP;
 
-int up_Down=1;
-
 void Rotatepid_Init(void)
 {
 	

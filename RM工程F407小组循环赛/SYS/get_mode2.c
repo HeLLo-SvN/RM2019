@@ -421,7 +421,7 @@ void Mode_Behind(void)
 	if(un_T_B_lock9==0){
 	   if(B_continuity8==0){	
 	    if(un_time_count>15){
-	        T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
+//	        T_ROTATE_POSITION = Rotate_Value1;//ÈÓ³öµ¯Ò©Ïä
 			
 			B_continuity8=1;
 		    B_continuity9=0;
@@ -453,28 +453,28 @@ void Mode_Behind(void)
 	  if(buffer_lock20==0){	
         if(un_time_count>60){
 		   if(buffer_lock21==0){
-	        T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
+//	        T_ROTATE_POSITION = Rotate_Value2;//¸´Î»
 			   buffer_lock21=1;
 			   buffer_lock22=0;
 		   }
 		}
 		if(un_time_count>70){
 		   if(buffer_lock22==0){
-		    T_ROTATE_POSITION = Rotate_Value3;
+//		    T_ROTATE_POSITION = Rotate_Value3;
 			   buffer_lock22=1;
 			   buffer_lock23=0;
 		   }
 		}
 		if(un_time_count>80){
 		   if(buffer_lock23==0){
-		    T_ROTATE_POSITION = Rotate_Value4;
+//		    T_ROTATE_POSITION = Rotate_Value4;
 			   buffer_lock23=1;
 			   buffer_lock24=0;
 		   }
 		}	
         if(un_time_count>90){		
  		   if(buffer_lock24==0){
-	        T_ROTATE_POSITION = Rotate_Value5;
+//	        T_ROTATE_POSITION = Rotate_Value5;
 			   buffer_lock24=1;
 			   buffer_lock20=1;
 			   

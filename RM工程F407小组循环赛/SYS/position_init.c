@@ -15,9 +15,9 @@ int initialization=1;
 void Position_Init(void){
 /***************目标值初始化***************/
 	if(initialization==1){
-//	T_GRAB_POSITION=GRAB_POSITION;
-	T_ROTATE_POSITION=Rotate_Value5;
-//	T_LIFT_POSITION_R=LIFT_POSITION_R;
+	T_GRAB_POSITION=GRAB_POSITION;
+//	T_ROTATE_POSITION=Rotate_Value5;
+	T_LIFT_POSITION_R=LIFT_POSITION_R;
 		initialization=0;
 	}
 }

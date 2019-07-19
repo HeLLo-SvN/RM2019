@@ -98,7 +98,7 @@ void CAN2_RX1_IRQHandler(void)
     CanRxMsg rx_message;
     if (CAN_GetITStatus(CAN2,CAN_IT_FMP1)!= RESET) 
     {
-			  CAN_ClearITPendingBit(CAN2, CAN_IT_FMP1);
+		CAN_ClearITPendingBit(CAN2, CAN_IT_FMP1);
         CAN_Receive(CAN2, CAN_FIFO1, &rx_message);
 	
 /****************升降返回值****************/	
@@ -108,7 +108,7 @@ void CAN2_RX1_IRQHandler(void)
  		  B_P_LIFT_L=rx_message.Data[0]<<8 | rx_message.Data[1];
 			
 			if(B_P_LIFT_L - LAST_VALUE_L < -5000)
-         LiftRound_L++;
+                 LiftRound_L++;
 			else if(B_P_LIFT_L - LAST_VALUE_L > 5000)
 				 LiftRound_L--;
 			
@@ -123,7 +123,7 @@ void CAN2_RX1_IRQHandler(void)
  		  B_P_LIFT_R=rx_message.Data[0]<<8 | rx_message.Data[1];
 			
 			if(B_P_LIFT_R - LAST_VALUE_R < -5000)
-         LiftRound_R++;
+                 LiftRound_R++;
 			else if(B_P_LIFT_R - LAST_VALUE_R > 5000)
 				 LiftRound_R--;
 			
@@ -140,7 +140,7 @@ void CAN2_RX1_IRQHandler(void)
  		  B_P_GRAB=rx_message.Data[0]<<8 | rx_message.Data[1];
 			
 			if(B_P_GRAB - LAST_VALUE_G < -5000)
-         GrabRound++;
+                 GrabRound++;
 			else if(B_P_GRAB - LAST_VALUE_G > 5000)
 				 GrabRound--;
 			
@@ -149,7 +149,7 @@ void CAN2_RX1_IRQHandler(void)
 			B_V_GRAB=rx_message.Data[2]<<8 | rx_message.Data[3];
 			
     }
-			
+/****总决赛将翻转部分变量归并到抓取部分****/		
 /****************翻转返回值****************/
     if(rx_message.StdId==0x204)
 	  {

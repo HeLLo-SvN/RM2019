@@ -47,17 +47,17 @@ void Rc_Checking(void)
 	  
 	  if((RC_Ctl.rc.s1==MID)&&(RC_Ctl.rc.s2==MID))
       {
-	            T_ROTATE_POSITION=Rotate_Value1;
+//	            T_ROTATE_POSITION=Rotate_Value1;
 	  }
 	  
 	  if((RC_Ctl.rc.s1==MID)&&(RC_Ctl.rc.s2==UP))
       {
-	            T_ROTATE_POSITION=Rotate_Value3;
+//	            T_ROTATE_POSITION=Rotate_Value3;
 	  }
 	  
 	  if((RC_Ctl.rc.s1==DOWN)&&(RC_Ctl.rc.s2==UP))
       {
-	            T_ROTATE_POSITION=Rotate_Value5;
+//	            T_ROTATE_POSITION=Rotate_Value5;
 	  }
 	  
 	  if((RC_Ctl.rc.s1==DOWN)&&(RC_Ctl.rc.s2==MID))
