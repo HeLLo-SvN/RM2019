@@ -54,6 +54,7 @@
 .\objects\usart1.o: ..\SYS\rescue.h
 .\objects\usart1.o: ..\SYS\to_hero.h
 .\objects\usart1.o: ..\SYS\grab_check.h
+.\objects\usart1.o: ..\SYS\lift_check.h
 .\objects\usart1.o: ..\SYS\position_init.h
 .\objects\usart1.o: ..\SYS\quit_mode.h
 .\objects\usart1.o: ..\SYS\get_mode1.h

@@ -54,6 +54,7 @@
 .\objects\screen.o: ..\SYS\rescue.h
 .\objects\screen.o: ..\SYS\to_hero.h
 .\objects\screen.o: ..\SYS\grab_check.h
+.\objects\screen.o: ..\SYS\lift_check.h
 .\objects\screen.o: ..\SYS\position_init.h
 .\objects\screen.o: ..\SYS\quit_mode.h
 .\objects\screen.o: ..\SYS\get_mode1.h

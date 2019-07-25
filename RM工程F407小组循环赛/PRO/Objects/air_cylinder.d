@@ -54,6 +54,7 @@
 .\objects\air_cylinder.o: ..\SYS\rescue.h
 .\objects\air_cylinder.o: ..\SYS\to_hero.h
 .\objects\air_cylinder.o: ..\SYS\grab_check.h
+.\objects\air_cylinder.o: ..\SYS\lift_check.h
 .\objects\air_cylinder.o: ..\SYS\position_init.h
 .\objects\air_cylinder.o: ..\SYS\quit_mode.h
 .\objects\air_cylinder.o: ..\SYS\get_mode1.h

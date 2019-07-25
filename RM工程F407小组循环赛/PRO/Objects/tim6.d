@@ -54,6 +54,7 @@
 .\objects\tim6.o: ..\SYS\rescue.h
 .\objects\tim6.o: ..\SYS\to_hero.h
 .\objects\tim6.o: ..\SYS\grab_check.h
+.\objects\tim6.o: ..\SYS\lift_check.h
 .\objects\tim6.o: ..\SYS\position_init.h
 .\objects\tim6.o: ..\SYS\quit_mode.h
 .\objects\tim6.o: ..\SYS\get_mode1.h

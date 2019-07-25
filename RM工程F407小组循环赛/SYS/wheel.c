@@ -71,11 +71,13 @@ void Wheel_Direction(void)
 /***上岛后轮补偿***/
 	int delta_upstair=0;
 /***恒定速度下岛***/
-    int constant_downstair=0;
+//    int constant_downstair=0;
 /***下岛后轮补偿***/
-	int delta_downstair=0;
+//	int delta_downstair=0;
 /***恒定速度取弹***/
-    int constant_grab=0;	
+    int constant_grab=0;
+//  int constant_grab_w=0;//底盘解算y方向分量	
+//	int constant_grab_d=0;//底盘解算x方向分量
 
 	
         x=(RC_Ctl.rc.ch3-1024)*13;
@@ -128,11 +130,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 			S_count++;
 		}
 		if(S_count<=50){
-			b_s=(F_simulation2-1000)*4;
+			b_s=(F_simulation2-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}
 		else{
 			S_count_lock=0;
-			b_s=(F_simulation2-1000)*4;
+			b_s=(F_simulation2-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}			
 
 	}
@@ -143,11 +145,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 		if(F_simulation2>1000){
         F_simulation2-=10;  //制动缓冲
 			S_count--;
-        b_s=(F_simulation2-1000)*4;		
+        b_s=(F_simulation2-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)		
 		}
 		else{
 		F_simulation2=1000;
-		b_s=(F_simulation2-1000)*4;	
+		b_s=(F_simulation2-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)	
 			S_start=1;
 			S_count=0;
 		}
@@ -200,11 +202,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 			W_count++;
 		}
 		if(W_count<=50){
-			f_w=(F_simulation1-1000)*4;
+			f_w=(F_simulation1-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}
 		else{
 			W_count_lock=0;
-			f_w=(F_simulation1-1000)*4;
+			f_w=(F_simulation1-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}			
 
 	}
@@ -215,11 +217,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 		if(F_simulation1>1000){
         F_simulation1-=10;  //制动缓冲
 			W_count--;
-        f_w=(F_simulation1-1000)*4;		
+        f_w=(F_simulation1-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)	
 		}
 		else{
 		F_simulation1=1000;
-		f_w=(F_simulation1-1000)*4;
+		f_w=(F_simulation1-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 			W_start=1;
 			W_count=0;
 		}
@@ -272,11 +274,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 			D_count++;
 		}
 		if(D_count<=50){
-			r_d=(F_simulation4-1000)*4;
+			r_d=(F_simulation4-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}
 		else{
 			D_count_lock=0;
-			r_d=(F_simulation4-1000)*4;
+			r_d=(F_simulation4-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}			
 
 	}
@@ -287,11 +289,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 		if(F_simulation4>1000){
         F_simulation4-=10;  //制动缓冲
 			D_count--;
-        r_d=(F_simulation4-1000)*4;	
+        r_d=(F_simulation4-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)	
 		}
 		else{
 		F_simulation4=1000;
-		r_d=(F_simulation4-1000)*4;	
+		r_d=(F_simulation4-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)	
 			D_start=1;
 			D_count=0;
 		}
@@ -344,11 +346,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 			A_count++;
 		}
 		if(A_count<=50){
-			l_a=(F_simulation3-1000)*4;
+			l_a=(F_simulation3-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}
 		else{
 			A_count_lock=0;
-			l_a=(F_simulation3-1000)*4;
+			l_a=(F_simulation3-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)
 		}			
 
 	}
@@ -359,11 +361,11 @@ if(E_lockchassis_flag==1){	//取弹底盘限制
 		if(F_simulation3>1000){
         F_simulation3-=10;  //制动缓冲
 			A_count--;
-        l_a=(F_simulation3-1000)*4;		
+        l_a=(F_simulation3-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)		
 		}
 		else{
 		F_simulation3=1000;
-		l_a=(F_simulation3-1000)*4;	
+		l_a=(F_simulation3-1000)*Parameter;//4;(总决赛改为倒车速度不受影响)	
 			A_start=1;
 			A_count=0;
 		}
@@ -530,9 +532,9 @@ else
     {
 	  constant_upstair=3600;
 		
-		delta_upstair=1000;
+		delta_upstair=2000;
 			   	
-		Toward_Left();
+		//Toward_Left();
 	   	   
 	   solenoid_valve_lock=0;
 	   
@@ -540,36 +542,39 @@ else
 	else{
 	  if(solenoid_valve_lock==0){
 	  
-	    Toward_Right();
+	    //Toward_Right();
 		solenoid_valve_lock=1;
 	   
       }
 	}
 /*****************恒定速度下岛逻辑*****************/ 
-	if(RC_Ctl.key.v&KEY_B)
-    {
-	  constant_downstair=2500;
-		
-		delta_downstair=1000;
-			   	
-		Toward_Left();
-	   	   
-	   solenoid_valve_lock1=0;
-	   
-	}
-	else{
-	  if(solenoid_valve_lock1==0){
-	  
-	    Toward_Right();
-		solenoid_valve_lock1=1;
-	   
-      }
-	}	
+//	if(RC_Ctl.key.v&KEY_B)
+//    {
+//	  constant_downstair=2500;
+//		
+//		delta_downstair=2000;
+//			   	
+//		//Toward_Left();
+//	   	   
+//	   solenoid_valve_lock1=0;
+//	   
+//	}
+//	else{
+//	  if(solenoid_valve_lock1==0){
+//	  
+//	    //Toward_Right();
+//		solenoid_valve_lock1=1;
+//	   
+//      }
+//	}	
 /*****************恒定速度取弹逻辑*****************/
-    if(auto_flag==0)
+    if(auto_flag==0)                                                              
     {
-	  constant_grab=750;
-	}
+	  constant_grab=1000;
+//	  constant_grab_w=1000;//底盘解算y方向分量	
+//	  constant_grab_d=1500;//底盘解算x方向分量
+		
+	}  
 	
  #endif
  
@@ -585,12 +590,12 @@ else
 	
  #endif
 	
- T_TOP_L=x+y+z+f_w-b_s-l_a+r_d+l_m+r_m+constant_upstair-constant_downstair-constant_grab-F_GYRO_ANGLE;
- T_TOP_R=x-y+z-f_w+b_s-l_a+r_d+l_m+r_m-constant_upstair+constant_downstair+constant_grab-F_GYRO_ANGLE;
- T_DOWN_L=-x+y+z+f_w-b_s+l_a-r_d+l_m+r_m+constant_upstair+delta_upstair-constant_downstair-delta_downstair-constant_grab-F_GYRO_ANGLE;
- T_DOWN_R=-x-y+z-f_w+b_s+l_a-r_d+l_m+r_m-constant_upstair-delta_upstair+constant_downstair+delta_downstair+constant_grab-F_GYRO_ANGLE;
- T_MID_L=y+z+f_w-b_s+l_m+r_m+constant_upstair-constant_downstair-constant_grab-F_GYRO_ANGLE;
- T_MID_R=-y+z-f_w+b_s+l_m+r_m-constant_upstair+constant_downstair+constant_grab-F_GYRO_ANGLE;
+ T_TOP_L=x+y+z+f_w-b_s-l_a+r_d+l_m+r_m+constant_upstair+constant_grab-F_GYRO_ANGLE;//-constant_downstair+constant_grab_w+constant_grab_d
+ T_TOP_R=x-y+z-f_w+b_s-l_a+r_d+l_m+r_m-constant_upstair+constant_grab-F_GYRO_ANGLE;//+constant_downstair-constant_grab_w+constant_grab_d
+ T_DOWN_L=-x+y+z+f_w-b_s+l_a-r_d+l_m+r_m+constant_upstair-constant_grab-F_GYRO_ANGLE;//-constant_downstair+constant_grab_w-constant_grab_d
+ T_DOWN_R=-x-y+z-f_w+b_s+l_a-r_d+l_m+r_m-constant_upstair-constant_grab-F_GYRO_ANGLE;//+constant_downstair-constant_grab_w-constant_grab_d
+ T_MID_L=y+z+f_w-b_s+l_m+r_m+constant_upstair+delta_upstair-F_GYRO_ANGLE;//-constant_downstair-delta_downstair
+ T_MID_R=-y+z-f_w+b_s+l_m+r_m-constant_upstair-delta_upstair-F_GYRO_ANGLE;//+constant_downstair+delta_downstair
  
  
 }

@@ -57,7 +57,7 @@ void Rotatepid_Configuration(void)
 		
 	 #endif
 	
-	 #if !Adjust
+	 #if Adjust
 	 	
 	 rotate_Ex.kp=U_ExRotateP;
 	 rotate_Ex.ki=U_ExRotateI;

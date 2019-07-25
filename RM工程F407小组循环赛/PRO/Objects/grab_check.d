@@ -54,6 +54,7 @@
 .\objects\grab_check.o: ..\SYS\rescue.h
 .\objects\grab_check.o: ..\SYS\to_hero.h
 .\objects\grab_check.o: ..\SYS\grab_check.h
+.\objects\grab_check.o: ..\SYS\lift_check.h
 .\objects\grab_check.o: ..\SYS\position_init.h
 .\objects\grab_check.o: ..\SYS\quit_mode.h
 .\objects\grab_check.o: ..\SYS\get_mode1.h

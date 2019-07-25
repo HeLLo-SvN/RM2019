@@ -54,6 +54,7 @@
 .\objects\pid.o: ..\SYS\rescue.h
 .\objects\pid.o: ..\SYS\to_hero.h
 .\objects\pid.o: ..\SYS\grab_check.h
+.\objects\pid.o: ..\SYS\lift_check.h
 .\objects\pid.o: ..\SYS\position_init.h
 .\objects\pid.o: ..\SYS\quit_mode.h
 .\objects\pid.o: ..\SYS\get_mode1.h

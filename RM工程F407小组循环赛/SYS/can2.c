@@ -131,6 +131,9 @@ void CAN2_RX1_IRQHandler(void)
 					
 			B_V_LIFT_R=rx_message.Data[2]<<8 | rx_message.Data[3];
 			
+			LIFT_Position_Init();//升降位置初始化（总决赛新增）
+//			Lift_Self_Checking();//升降位置建立基准（总决赛新增）
+			
     }
 			
 /****************抓取返回值****************/
@@ -147,6 +150,9 @@ void CAN2_RX1_IRQHandler(void)
 			GRAB_POSITION = B_P_GRAB + 8191*GrabRound;
 					
 			B_V_GRAB=rx_message.Data[2]<<8 | rx_message.Data[3];
+			
+			GRAB_Position_Init();//抓取位置初始化（总决赛新增）
+			Grab_Self_Checking();//抓取位置建立基准（总决赛新增）
 			
     }
 /****总决赛将翻转部分变量归并到抓取部分****/		

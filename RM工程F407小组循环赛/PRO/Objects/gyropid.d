@@ -54,6 +54,7 @@
 .\objects\gyropid.o: ..\SYS\rescue.h
 .\objects\gyropid.o: ..\SYS\to_hero.h
 .\objects\gyropid.o: ..\SYS\grab_check.h
+.\objects\gyropid.o: ..\SYS\lift_check.h
 .\objects\gyropid.o: ..\SYS\position_init.h
 .\objects\gyropid.o: ..\SYS\quit_mode.h
 .\objects\gyropid.o: ..\SYS\get_mode1.h

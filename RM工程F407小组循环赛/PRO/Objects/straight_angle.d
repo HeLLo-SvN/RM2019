@@ -54,6 +54,7 @@
 .\objects\straight_angle.o: ..\SYS\rescue.h
 .\objects\straight_angle.o: ..\SYS\to_hero.h
 .\objects\straight_angle.o: ..\SYS\grab_check.h
+.\objects\straight_angle.o: ..\SYS\lift_check.h
 .\objects\straight_angle.o: ..\SYS\position_init.h
 .\objects\straight_angle.o: ..\SYS\quit_mode.h
 .\objects\straight_angle.o: ..\SYS\get_mode1.h

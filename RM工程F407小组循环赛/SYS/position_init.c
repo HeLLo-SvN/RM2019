@@ -1,23 +1,30 @@
 #include "main.h"
 
 extern int32_t T_GRAB_POSITION;
-extern int32_t T_ROTATE_POSITION;
 extern int32_t T_LIFT_POSITION_R;
 
 extern int32_t GRAB_POSITION;
-extern int32_t ROTATE_POSITION;
 extern int32_t LIFT_POSITION_R;
 
+int grab_initialization=1;
+int lift_initialization=1;
 
-
-int initialization=1;
-
-void Position_Init(void){
+void GRAB_Position_Init(void){
 /***************目标值初始化***************/
-	if(initialization==1){
+	if(grab_initialization==1){
 	T_GRAB_POSITION=GRAB_POSITION;
-//	T_ROTATE_POSITION=Rotate_Value5;
+	
+		grab_initialization=0;
+
+	}
+}
+
+void LIFT_Position_Init(void){
+/***************目标值初始化***************/
+	if(lift_initialization==1){
 	T_LIFT_POSITION_R=LIFT_POSITION_R;
-		initialization=0;
+		
+		lift_initialization=0;
+
 	}
 }

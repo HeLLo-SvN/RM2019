@@ -54,6 +54,7 @@
 .\objects\rotatepid.o: ..\SYS\rescue.h
 .\objects\rotatepid.o: ..\SYS\to_hero.h
 .\objects\rotatepid.o: ..\SYS\grab_check.h
+.\objects\rotatepid.o: ..\SYS\lift_check.h
 .\objects\rotatepid.o: ..\SYS\position_init.h
 .\objects\rotatepid.o: ..\SYS\quit_mode.h
 .\objects\rotatepid.o: ..\SYS\get_mode1.h

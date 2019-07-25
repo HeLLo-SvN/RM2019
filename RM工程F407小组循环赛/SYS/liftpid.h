@@ -6,7 +6,7 @@
 #define   ExLiftP     0.05
 #define   ExLiftI     0
 #define   ExLiftD     0
-#define   InLiftP     4
+#define   InLiftP     8
 #define   InLiftI     0.1
 #define   InLiftD     0
 

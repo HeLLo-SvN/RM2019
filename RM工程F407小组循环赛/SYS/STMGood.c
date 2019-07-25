@@ -32,8 +32,10 @@ double TPR = 0.0f;
 double TP = 0.0f;
 
 double Booleans_Claw = 0.0f;
-double Booleans_Lift = 0.0f;
+double Booleans_Pop = 0.0f;
 double Booleans_Slide = 0.0f;
+double Booleans_Open = 0.0f;
+double Booleans_Trail = 0.0f;
 int high_Trigger=0;
 
 double P4 = 0.0f;
@@ -44,8 +46,11 @@ double P5 = 0.0f;
 double I5 = 0.0f;
 double D5 = 0.0f;
 
-//uint16_t x_servo_Position = 0;
-//uint16_t y_servo_Position = 0;
+uint16_t x_servo_Position = 0;
+uint16_t y_servo_Position = 0;
+
+extern int32_t T_LIFT_POSITION_R;
+extern int32_t T_GRAB_POSITION;
 
 //-------------------------------------------------------------------------------
 int cmd(char *Cmd,int n)
@@ -114,10 +119,17 @@ int cmd(char *Cmd,int n)
 void multi1(int n)
 {
 /******µ×ÅÌPID1******/
-	P1 = xx[1];
-	I1 = xx[2];
-	D1 = xx[3];
-	printf("P1=%f  I1=%f  D1=%f\r\n",P1,I1,D1);
+	
+	T_LIFT_POSITION_R = xx[1];
+//	T_GRAB_POSITION = xx[2];
+	
+	printf("T_LIFT_POSITION_R=%d\r\n",T_LIFT_POSITION_R);
+//	printf("T_LIFT_POSITION_R=%d  T_GRAB_POSITION=%d\r\n",T_LIFT_POSITION_R,T_GRAB_POSITION);
+	
+//	P1 = xx[1];
+//	I1 = xx[2];
+//	D1 = xx[3];
+//	printf("P1=%f  I1=%f  D1=%f\r\n",P1,I1,D1);
 }
 void multi2(int n)
 {
@@ -148,24 +160,28 @@ void multi4(int n)
 void multi5(int n)
 {
 /*******ÂëÅÌÖµ*******/
-//	TPL = xx[1];
-	TPR = xx[2];
+	TPR = xx[1];
+//	TPL = xx[2];
 //	TP = xx[3];
-//	printf("TPL=%f\r\n",TPL);
 	printf("TPR=%f\r\n",TPR);
+//	printf("TPL=%f\r\n",TPL);
 //	printf("TP=%f\r\n",TP);
 }
 void multi6(int n)
 {
 /********Æø¸×********/
 	Booleans_Claw = xx[1];
-	Booleans_Lift = xx[2];
+	Booleans_Pop = xx[2];
 	Booleans_Slide = xx[3];
-	high_Trigger = xx[4];
+	Booleans_Open = xx[4];
+	Booleans_Trail = xx[5];
+//	high_Trigger = xx[4];
 	printf("Booleans_Claw=%f\r\n",Booleans_Claw);
-	printf("Booleans_Lift=%f\r\n",Booleans_Lift);
+	printf("Booleans_Pop=%f\r\n",Booleans_Pop);
 	printf("Booleans_Slide=%f\r\n",Booleans_Slide);
-	printf("high_Trigger=%d\r\n",high_Trigger);
+	printf("Booleans_Open=%f\r\n",Booleans_Open);
+	printf("Booleans_Trail=%f\r\n",Booleans_Trail);
+//	printf("high_Trigger=%d\r\n",high_Trigger);
 }
 void multi7(int n)
 {
@@ -186,10 +202,10 @@ void multi8(int n)
 void multi9(int n)
 {
 /********¶æ»ú********/	
-//	x_servo_Position = xx[1];
-//	y_servo_Position = xx[2];
-//	printf("x_servo_Position=%d\r\n",x_servo_Position);
-//	printf("y_servo_Position=%d\r\n",y_servo_Position);
+	x_servo_Position = xx[1];
+	y_servo_Position = xx[2];
+	printf("x_servo_Position=%d\r\n",x_servo_Position);
+	printf("y_servo_Position=%d\r\n",y_servo_Position);
 	
 }
 

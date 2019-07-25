@@ -57,6 +57,6 @@ void PID_AbsoluteMode(PID_AbsoluteType *pid) //¾ø¶ÔÊ½PID¿ØÖÆ
 		if(pid->ctrOut >  pid->MaxOut) pid->ctrOut =  pid->MaxOut;
 		if(pid->ctrOut < -pid->MaxOut) pid->ctrOut = -pid->MaxOut;
 	}
-	}
+}
 
 

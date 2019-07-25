@@ -54,6 +54,7 @@
 .\objects\touch_switch.o: ..\SYS\rescue.h
 .\objects\touch_switch.o: ..\SYS\to_hero.h
 .\objects\touch_switch.o: ..\SYS\grab_check.h
+.\objects\touch_switch.o: ..\SYS\lift_check.h
 .\objects\touch_switch.o: ..\SYS\position_init.h
 .\objects\touch_switch.o: ..\SYS\quit_mode.h
 .\objects\touch_switch.o: ..\SYS\get_mode1.h

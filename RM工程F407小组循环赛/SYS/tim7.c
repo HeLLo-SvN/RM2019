@@ -3,6 +3,7 @@
 int Parameter=8;
 
 extern int SHIFT_speed_switch_flag;
+extern int CTRL_speed_switch_flag;
 
 
 void TIM7_Configuration(void)
@@ -49,6 +50,9 @@ void TIM7_IRQHandler(void)
 		   
 	    if(SHIFT_speed_switch_flag==0){
 		      Parameter=17;
+		}
+		else if(CTRL_speed_switch_flag==0){
+		      Parameter=4;
 		}
 		else{
 		      Parameter=8;

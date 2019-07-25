@@ -21,7 +21,7 @@ void Rc_Checking(void)
 	  if((RC_Ctl.rc.s1==UP)&&(RC_Ctl.rc.s2==MID))
       {
 	              Clamp();
-		       Toward_Left();
+//		       Toward_Left();
 		        Extension();
 		           //Pop();
 		           Open();
@@ -32,7 +32,7 @@ void Rc_Checking(void)
 	  if((RC_Ctl.rc.s1==UP)&&(RC_Ctl.rc.s2==DOWN))
       {
 	              Loosen();
-		       Toward_Right();
+//		       Toward_Right();
 		        Contraction();
 		          //Withdraw();
 		           Close();
@@ -62,8 +62,8 @@ void Rc_Checking(void)
 	  
 	  if((RC_Ctl.rc.s1==DOWN)&&(RC_Ctl.rc.s2==MID))
       {
-	       T_LIFT_POSITION_R=Lift_R_Value3 ;
-		     T_GRAB_POSITION=Grab_Value3;
+//	       T_LIFT_POSITION_R=Lift_R_Value3 ;
+		     //T_GRAB_POSITION=Grab_Value3;
 	  }
 	  
   }

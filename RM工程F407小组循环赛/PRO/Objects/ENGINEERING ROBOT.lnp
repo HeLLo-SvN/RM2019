@@ -66,6 +66,7 @@
 ".\objects\rescue.o"
 ".\objects\to_hero.o"
 ".\objects\grab_check.o"
+".\objects\lift_check.o"
 ".\objects\position_init.o"
 ".\objects\quit_mode.o"
 ".\objects\get_mode1.o"

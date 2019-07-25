@@ -8,6 +8,9 @@ extern int on_s_time_count;//基恩士判断之前定时器计数变量
 extern int on_time_count;//基恩士判断之后定时器计数变量
 extern int on_N_time_count;//第二次基恩士判断之后定时器计数变量
 
+extern int on_DN_time_count;//第三次基恩士判断之后定时器计数变量（淘汰赛追加）
+
+extern int DN_time_count;//第三次基恩士判断之后定时器计数变量（总决赛追加）
 
 /********基恩士识别标志位********/
 extern int times;
@@ -70,6 +73,42 @@ extern int on_N_last_value1;
 
 extern int on_N_Start;
 
+/*********（淘汰赛追加）*********/
+
+extern int on_DN_Grab_Condition;
+
+extern int on_DN_First;
+extern int on_DN_Double;
+extern int on_DN_Triple;
+
+extern int on_DN_times;
+extern int on_DN_times_lock;
+extern int on_DN_times_lock1;
+extern int on_DN_times_lock2;
+extern int on_DN_times_lock3;
+extern int on_DN_last_value;
+extern int on_DN_last_value1;
+
+extern int on_DN_Start;
+
+/*********（总决赛追加）*********/
+
+extern int DN_Grab_Condition;
+
+extern int DN_First;
+extern int DN_Double;
+extern int DN_Triple;
+
+extern int DN_times;
+extern int DN_times_lock;
+extern int DN_times_lock1;
+extern int DN_times_lock2;
+extern int DN_times_lock3;
+extern int DN_last_value;
+extern int DN_last_value1;
+
+extern int DN_Start;
+
 /********************************/
 
 int quit_time_count;
@@ -114,6 +153,7 @@ extern int buffer_lock26;
 extern int buffer_lock27;
 extern int buffer_lock28;
 extern int buffer_lock29;
+
 /****岛上连续取两盒弹药箱****/
 
 extern int on_buffer_lock20;
@@ -146,6 +186,7 @@ extern int X_supply_flag;
 extern int C_open_permission;//开舱门权限
 extern int C_open_flag;
 extern int SHIFT_speed_switch_flag;
+extern int CTRL_speed_switch_flag;
 extern int SHIFT_command_flag;//Shift组合键标志位
 
 
@@ -169,6 +210,11 @@ extern int on_deadlock2;
 extern int on_deadlock3;
 extern int on_deadlock4;
 extern int on_deadlock5;
+extern int on_deadlock6;//（淘汰赛追加）
+extern int on_deadlock7;//（淘汰赛追加）
+
+extern int D_deadlock6;//（总决赛追加）
+extern int D_deadlock7;//（总决赛追加）
 
 extern int on_KILL;
 
@@ -258,11 +304,35 @@ extern int on_KILL;
 	extern int on_continuity22;
    	extern int on_continuity23;
 
+/*****第三次识别连续性标志位*****/ ///（淘汰赛追加）	
+    extern int on_D_continuity16;
+	extern int on_D_continuity17;
+	extern int on_D_continuity18;
+   	extern int on_D_continuity19;		
+    extern int on_D_continuity20;
+	extern int on_D_continuity21;
+	extern int on_D_continuity22;
+   	extern int on_D_continuity23;
+
+/*****第三次识别连续性标志位*****/ ///（总决赛追加）	
+    extern int D_continuity16;
+	extern int D_continuity17;
+	extern int D_continuity18;
+   	extern int D_continuity19;		
+    extern int D_continuity20;
+	extern int D_continuity21;
+	extern int D_continuity22;
+   	extern int D_continuity23;
+	extern int D_continuity24;
+
+	extern int PID_SWITCH;//总决赛新增取弹模式PID的切换
 
 void Quit_Mode(void)
 {
         if(R_quit_flag==0){
-				 
+		
+         PID_SWITCH=1;//总决赛新增取弹模式PID的切换
+			
 		 quit_time_count++;
 		 
 		 s_time_count=0;//基恩士判断之前定时器计数变量
@@ -273,6 +343,9 @@ void Quit_Mode(void)
 		 on_time_count=0;
          on_N_time_count=0;			
 			
+		 on_DN_time_count=0;//第三次基恩士判断之后定时器计数变量（淘汰赛追加）	
+			
+		 DN_time_count=0;//第三次基恩士判断之后定时器计数变量（总决赛追加）	
 		 			
 		 auto_flag=1;//自动取弹标志位
 		 auto_buffer1=1;
@@ -289,6 +362,8 @@ void Quit_Mode(void)
 		 C_open_flag=1;
 		 
 		 SHIFT_speed_switch_flag=1;
+		 CTRL_speed_switch_flag=1;
+		 
 		 SHIFT_command_flag=1;//组合键标志位
 		 		 
 		 V_on_isle_flag=1;//岛上取弹药标志位
@@ -377,6 +452,27 @@ void Quit_Mode(void)
 	   on_continuity22=1;
    	   on_continuity23=1;
 
+/*****第三次识别连续性标志位*****/ ///（淘汰赛追加）	
+       on_D_continuity16=1;
+	   on_D_continuity17=1;
+	   on_D_continuity18=1;
+   	   on_D_continuity19=1;		
+       on_D_continuity20=1;
+	   on_D_continuity21=1;
+	   on_D_continuity22=1;
+   	   on_D_continuity23=1;	
+
+/*****第三次识别连续性标志位*****/ ///（总决赛追加）	
+       D_continuity16=1;
+	   D_continuity17=1;
+	   D_continuity18=1;
+   	   D_continuity19=1;		
+       D_continuity20=1;
+	   D_continuity21=1;
+	   D_continuity22=1;
+   	   D_continuity23=1;
+       D_continuity24=1;	   
+
 /**********消息队列令牌**********/		 
 	     token1=0;
          on_token1=0;		 
@@ -440,6 +536,34 @@ void Quit_Mode(void)
 
 		 on_N_Start=1;
 		 
+		 on_DN_First=0;
+         on_DN_Double=0;
+         on_DN_Triple=0;
+
+         on_DN_times=0;
+         on_DN_times_lock=1;
+         on_DN_times_lock1=1;
+         on_DN_times_lock2=1;
+         on_DN_times_lock3=1;
+         on_DN_last_value=0;
+         on_DN_last_value1=0;
+
+         on_DN_Start=1;		 
+		 
+		 DN_First=0;
+         DN_Double=0;
+         DN_Triple=0;
+
+         DN_times=0;
+         DN_times_lock=1;
+         DN_times_lock1=1;
+         DN_times_lock2=1;
+         DN_times_lock3=1;
+         DN_last_value=0;
+         DN_last_value1=0;
+
+         DN_Start=1;	
+		 
 /***********自锁标志位***********/
         deadlock1=1;
 		deadlock2=1;
@@ -454,7 +578,12 @@ void Quit_Mode(void)
 	   on_deadlock3=1;
 	   on_deadlock4=1;
 	   on_deadlock5=1;
-
+       on_deadlock6=1;//（淘汰赛追加）
+	   on_deadlock7=1;//（淘汰赛追加）
+	   
+	   D_deadlock6=1;//（总决赛追加）
+	   D_deadlock7=1;//（总决赛追加）
+	   
        on_KILL=1;
 
 /***********缓冲标志位***********/

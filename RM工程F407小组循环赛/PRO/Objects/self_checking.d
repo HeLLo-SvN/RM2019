@@ -54,6 +54,7 @@
 .\objects\self_checking.o: ..\SYS\rescue.h
 .\objects\self_checking.o: ..\SYS\to_hero.h
 .\objects\self_checking.o: ..\SYS\grab_check.h
+.\objects\self_checking.o: ..\SYS\lift_check.h
 .\objects\self_checking.o: ..\SYS\position_init.h
 .\objects\self_checking.o: ..\SYS\quit_mode.h
 .\objects\self_checking.o: ..\SYS\get_mode1.h

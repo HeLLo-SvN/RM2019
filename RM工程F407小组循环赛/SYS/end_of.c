@@ -1,12 +1,13 @@
 #include "main.h"
 
-//extern int grab_baseline;
-
 extern int32_t T_LIFT_POSITION_R;
 
 extern int32_t T_GRAB_POSITION;
 
 extern int32_t T_ROTATE_POSITION;
+
+extern int grab_baseline;//建立抓取机构的基准位置
+//extern int lift_baseline;//建立升降机构的基准位置
 
 /******启动准备弹药箱标志位******/
 extern int start_F_lock1;
@@ -117,6 +118,31 @@ extern int on_T_lock18;
 extern int on_T_lock19;
 extern int on_T_lock20;
 
+/***岛上连续取下一盒弹药箱标志位***///（淘汰赛追加）
+
+extern int on_DO_lock1;
+extern int on_DO_lock2;
+extern int on_DO_lock3;
+extern int on_DO_lock4;
+extern int on_DO_lock5;
+extern int on_DO_lock6;
+extern int on_DO_lock7;
+extern int on_DO_lock8;
+extern int on_DO_lock9;
+extern int on_DO_lock10;
+
+/***岛下连续取下一盒弹药箱标志位***///（总决赛追加）
+
+extern int DO_lock1;
+extern int DO_lock2;
+extern int DO_lock3;
+extern int DO_lock4;
+extern int DO_lock5;
+extern int DO_lock6;
+extern int DO_lock7;
+extern int DO_lock8;
+extern int DO_lock9;
+extern int DO_lock10;
 
 extern int quit_time_count;
 
@@ -244,6 +270,31 @@ void Action_Resetting(void)
 	on_T_lock19=1;
 	on_T_lock20=1;	
 	
+/***岛上连续取下一盒弹药箱标志位***///（淘汰赛追加）
+
+	on_DO_lock1=1;
+	on_DO_lock2=1;
+	on_DO_lock3=1;
+    on_DO_lock4=1;
+	on_DO_lock5=1;
+	on_DO_lock6=1;
+	on_DO_lock7=1;
+    on_DO_lock8=1;
+	on_DO_lock9=1;
+	on_DO_lock10=1;
+
+/***岛下连续取下一盒弹药箱标志位***///（总决赛追加）
+
+	DO_lock1=1;
+	DO_lock2=1;
+	DO_lock3=1;
+    DO_lock4=1;
+	DO_lock5=1;
+	DO_lock6=1;
+	DO_lock7=1;
+    DO_lock8=1;
+	DO_lock9=1;
+	DO_lock10=1;
 
 /********判断拖车装置是否复位********/
            if(fold_lock==1){
@@ -257,11 +308,11 @@ void Action_Resetting(void)
                 Close();
 			  close_lock=0;
 			 }
-/**********判断弹舱是否复位**********/
-		  if(withdraw_lock==1){
-               Withdraw();
-			  withdraw_lock=0; 
-			 }
+/**********判断弹舱是否复位**********/       //总决赛取消此种弹舱结构
+//		  if(withdraw_lock==1){
+//              Withdraw();
+//			  withdraw_lock=0; 
+//			 }
 
 /********判断取弹顺序依次复位********/	
 /********首先判断爪子是否复位********/
@@ -274,7 +325,13 @@ void Action_Resetting(void)
               Contraction();
 			 contraction_lock=0;
 			 }
-///********判断弹射装置是否复位********/    //总决赛取消此方式扔弹药箱    
+///********判断弹射装置是否复位********/    //总决赛取消此方式扔弹药箱   
+
+		  if(withdraw_lock==1){             //总决赛改气缸结构扔弹药箱
+              Withdraw();
+			  withdraw_lock=0; 
+			 }
+			 
 //       if(T_ROTATE_POSITION==Rotate_Value1){
 //	     T_ROTATE_POSITION=Rotate_Value2;
 //	   }
@@ -291,14 +348,14 @@ void Action_Resetting(void)
 //	     T_ROTATE_POSITION=Rotate_Value5;
 //	   }
 				
-///********判断横移装置是否复位********/ 
+///********判断横移装置是否复位********/     //总决赛取消此种抓取方式
 //	    Toward_Right();
 	   
 /********判断抓取装置是否复位********/
-	  if(T_GRAB_POSITION!=Grab_Value3){ 
+	  if(T_GRAB_POSITION!=(Grab_Value3+grab_baseline)){ 
        if(quit_lock==1){
          if(quit_time_count>50){
-	    T_GRAB_POSITION=Grab_Value3;//grab_baseline;
+	    T_GRAB_POSITION=(Grab_Value3+grab_baseline);
 			 
 			 quit_time_count=0;
 			 quit_lock=0;
@@ -306,11 +363,11 @@ void Action_Resetting(void)
 	 }
    }
 /************升降装置复位************/ 
-      if(T_LIFT_POSITION_R!=Lift_R_Value3){
+      if(T_LIFT_POSITION_R!=Lift_R_Value2){
 		 if(quit_time_count>50){
-		T_LIFT_POSITION_R=Lift_R_Value3;
-/********判断横移装置是否复位********/ 
-	          Toward_Right();	
+		T_LIFT_POSITION_R=Lift_R_Value2;
+/********判断横移装置是否复位********/       //总决赛取消此种抓取方式
+	          //Toward_Right();	
 			 
 			 quit_time_count=0;
 			   quit_lock=1;
@@ -327,8 +384,8 @@ void Action_Resetting(void)
 		 }
 	 }
 	 else{
-/********判断横移装置是否复位********/ 
-	          Toward_Right();	
+/********判断横移装置是否复位********/       //总决赛取消此种抓取方式 
+	          //Toward_Right();	
 			 
 			 quit_time_count=0;
 			   quit_lock=1;

@@ -32,6 +32,8 @@ extern int16_t B_DOWN_R;
 extern int16_t B_MID_L;
 extern int16_t B_MID_R;
 
+int PID_SWITCH=1;//总决赛新增取弹模式PID的切换
+
 void Chassispid_Init(void)
 {
 	
@@ -117,6 +119,7 @@ void Chassispid_Configuration(void)
 
 	 #if !Adjust
 	 
+   if(PID_SWITCH==1){ 
      topleft.kp=ChassisP;
 	 topleft.ki=ChassisI;
 	 topleft.kd=ChassisD;
@@ -140,6 +143,32 @@ void Chassispid_Configuration(void)
 	 midright.kp=ChassisP;
 	 midright.ki=ChassisI;
 	 midright.kd=ChassisD;
+    }
+   if(PID_SWITCH==0){
+     topleft.kp=ChassisP_N;
+	 topleft.ki=ChassisI_N;
+	 topleft.kd=ChassisD_N;
+	
+	 topright.kp=ChassisP_N;
+	 topright.ki=ChassisI_N;
+	 topright.kd=ChassisD_N;
+	
+	 downleft.kp=ChassisP_N;
+	 downleft.ki=ChassisI_N;
+	 downleft.kd=ChassisD_N;
+	
+	 downright.kp=ChassisP_N;
+	 downright.ki=ChassisI_N;
+	 downright.kd=ChassisD_N;
+	 
+	 midleft.kp=ChassisP_N;
+	 midleft.ki=ChassisI_N;
+	 midleft.kd=ChassisD_N;
+	 
+	 midright.kp=ChassisP_N;
+	 midright.ki=ChassisI_N;
+	 midright.kd=ChassisD_N;
+   }
 	 
    #endif
 

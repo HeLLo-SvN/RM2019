@@ -41,6 +41,7 @@
 #include "rescue.h"
 #include "to_hero.h"
 #include "grab_check.h"
+#include "lift_check.h"
 #include "position_init.h"
 #include "quit_mode.h"
 #include "get_mode1.h"
@@ -50,18 +51,37 @@
 #include "straight_angle.h"
 #include "self_checking.h"
 
-#define Lift_R_Value1 -300000//上升一定高度
-#define Lift_R_Value2 -450000//再次上升一定高度
-#define Lift_R_Value3 -5000//复位
-#define Grab_Value1 43000   //竖立
-#define Grab_Value2 94000   //取弹
-#define Grab_Value3 5000    //复位
+
+/************总决赛取弹参数***********/
+#define Lift_R_Value1 -440000   //上升至取弹高度
+#define Lift_R_Value2 3623      //复位   
+//#define Grab_Value1 83000       //取弹
+//#define Grab_Value2 43000       //竖立
+//#define Grab_Value3 4108        //复位
+
+/**总决赛取弹参数(以触碰开关为基准)**/
+/************取弹参数总里程***********/
+//#define Lift_R_Value1 -443623 //上升至取弹高度
+//#define Lift_R_Value2 0       //复位   
+#define Grab_Value1 78892     //取弹
+#define Grab_Value2 38892     //竖立
+#define Grab_Value3 0         //复位
+
+/************分区赛取弹参数***********/
+//#define Lift_R_Value1 -300000 //上升一定高度
+//#define Lift_R_Value2 -450000 //再次上升一定高度
+//#define Lift_R_Value2 -5000   //复位   
+//#define Grab_Value1 43000     //竖立
+//#define Grab_Value1 94000     //取弹
+//#define Grab_Value2 5000      //复位
+
+/************总决赛取消部分***********/
 /*总决赛将弹出弹药箱部分改为气缸结构*/
 /*取消分区赛中基于电机结构的缓冲处理*/
 //#define Rotate_Value1 -25000    //弹出弹药箱
-//#define Rotate_Value2 -15000       //缓冲复位
+//#define Rotate_Value2 -15000    //缓冲复位
 //#define Rotate_Value3 -10000
 //#define Rotate_Value4 -5000
-//#define Rotate_Value5 1500        //0
+//#define Rotate_Value5 1500      
 
 #endif

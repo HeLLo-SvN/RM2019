@@ -57,6 +57,7 @@ extern int32_t F_LIFT_POSITION_L;
 extern int32_t F_LIFT_POSITION_R;
 
 extern int32_t F_GRAB_POSITION;
+extern int32_t F_ROTATE_POSITION;//总决赛新增测试变量
 
 extern int First;
 extern int Double;
@@ -78,6 +79,8 @@ extern PID_AbsoluteType  gyro_Angle;
 
 extern float B_GYRO_ANGLE;
 extern float INSTANTANEOUS;
+
+extern int Keyence;
 
 void Print_Test(void){
 
@@ -121,32 +124,38 @@ void Print_Test(void){
 //	printf("grab_In.ctrOut=%f\r\n",grab_In.ctrOut);
 //	
 //	printf("F_GRAB_POSITION=%d\r\n",F_GRAB_POSITION);
+///*******************总决赛新增测试变量*******************/	
+//	printf("feedbackP3=%d\r\n",B_P_ROTATE);
+//	printf("feedbackP4=%d\r\n",ROTATE_POSITION);
+//	
+//	printf("F_ROTATE_POSITION=%d\r\n",F_ROTATE_POSITION);
+	
 /************************升降测试************************/		
-//--	printf("targetTL=%d\r\n",T_LIFT_POSITION_L);
-	printf("targetTR=%d\r\n",T_LIFT_POSITION_R);
-	
-	printf("feedbackPL1=%d\r\n",B_P_LIFT_L);
-	printf("feedbackPL2=%d\r\n",LIFT_POSITION_L);
-	printf("feedbackVL=%d\r\n",B_V_LIFT_L);
-		
-	printf("feedbackPR1=%d\r\n",B_P_LIFT_R);
-	printf("feedbackPR2=%d\r\n",LIFT_POSITION_R);
-	printf("feedbackVR=%d\r\n",B_V_LIFT_R);
-	
+////--	printf("targetTL=%d\r\n",T_LIFT_POSITION_L);
+//	printf("targetTR=%d\r\n",T_LIFT_POSITION_R);
+//	
+//	printf("feedbackPL1=%d\r\n",B_P_LIFT_L);
+//	printf("feedbackPL2=%d\r\n",LIFT_POSITION_L);
+//	printf("feedbackVL=%d\r\n",B_V_LIFT_L);
+//		
+//	printf("feedbackPR1=%d\r\n",B_P_LIFT_R);
+//	printf("feedbackPR2=%d\r\n",LIFT_POSITION_R);
+//	printf("feedbackVR=%d\r\n",B_V_LIFT_R);
+//	
 ////--	printf("LeftEx.errNow=%f\r\n",lift_L_Ex.errNow);
 ////--    printf("LeftIn.errNow=%f\r\n",lift_L_In.errNow);
 
-	printf("RightEx.errNow=%f\r\n",lift_R_Ex.errNow);
-    printf("RightIn.errNow=%f\r\n",lift_R_In.errNow);
+//	printf("RightEx.errNow=%f\r\n",lift_R_Ex.errNow);
+//  printf("RightIn.errNow=%f\r\n",lift_R_In.errNow);
 
 ////--	printf("lift_L_Ex.ctrOut=%f\r\n",lift_L_Ex.ctrOut);
 ////--	printf("lift_L_In.ctrOut=%f\r\n",lift_L_In.ctrOut);
-	
-	printf("lift_R_Ex.ctrOut=%f\r\n",lift_R_Ex.ctrOut);
-	printf("lift_R_In.ctrOut=%f\r\n",lift_R_In.ctrOut);
-	
-	printf("F_LIFT_POSITION_R=%d\r\n",F_LIFT_POSITION_R);
-	printf("F_LIFT_POSITION_L=%d\r\n",F_LIFT_POSITION_L);
+//	
+//	printf("lift_R_Ex.ctrOut=%f\r\n",lift_R_Ex.ctrOut);
+//	printf("lift_R_In.ctrOut=%f\r\n",lift_R_In.ctrOut);
+//	
+//	printf("F_LIFT_POSITION_R=%d\r\n",F_LIFT_POSITION_R);
+//	printf("F_LIFT_POSITION_L=%d\r\n",F_LIFT_POSITION_L);
 	
 /************************翻转测试************************/	//总决赛取消此功能
 //  printf("targetTRo=%d\r\n",T_ROTATE_POSITION);
@@ -161,7 +170,7 @@ void Print_Test(void){
 //	printf("rotate_Ex.ctrOut=%f\r\n",rotate_Ex.ctrOut);
 //	printf("rotate_In.ctrOut=%f\r\n",rotate_In.ctrOut);
 /***********************触碰开关测试***********************/
-//    printf("testing=%d\r\n",touch_switch);
+//  printf("testing=%d\r\n",touch_switch);
 /***********************Keyence测试***********************/
 //  printf("testing=%d\r\n",Keyence);
 /************************气缸测试************************/

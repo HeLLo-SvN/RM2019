@@ -54,6 +54,7 @@
 .\objects\can1.o: ..\SYS\rescue.h
 .\objects\can1.o: ..\SYS\to_hero.h
 .\objects\can1.o: ..\SYS\grab_check.h
+.\objects\can1.o: ..\SYS\lift_check.h
 .\objects\can1.o: ..\SYS\position_init.h
 .\objects\can1.o: ..\SYS\quit_mode.h
 .\objects\can1.o: ..\SYS\get_mode1.h

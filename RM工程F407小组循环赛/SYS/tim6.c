@@ -43,21 +43,22 @@ void TIM6_DAC_IRQHandler(void)
   {
     TIM_ClearITPendingBit(TIM6,TIM_IT_Update);
     TIM_ClearFlag(TIM6, TIM_FLAG_Update);
-///*****************基于触碰开关复位****************/
-	  	Position_Init();//物理位置初始化  
-//	    Grab_Self_Checking();//爪子位置自检		  	  
+	  
 /********************具体任务********************/
 
            Value_Change();
 	  
            Quit_Mode();
 	   
- if(!(F_under_isle_flag||SHIFT_command_flag))
-	       {Mode_Front();}
- if(!(E_under_isle_flag||SHIFT_command_flag)) 	   
-	       {Mode_Behind();}
+// if(!(F_under_isle_flag||SHIFT_command_flag))
+//	       {Mode_Front();}                     //分区赛岛下前排取弹按键逻辑
+// if(!(E_under_isle_flag||SHIFT_command_flag)) 	   
+//	       {Mode_Behind();}                    //分区赛岛下后排取弹按键逻辑
+	  
+         if(F_under_isle_flag==0)
+	       {Mode_Front();}	                   //总决赛岛下取弹由F键位改为B
 	     if(V_on_isle_flag==0)
-		   {Mode_On_Isle();}
+		   {Mode_On_Isle();}                   //总决赛岛下后排及岛上取弹键位
 
 		   
            Auto_Rotate180();		   

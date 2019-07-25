@@ -173,7 +173,7 @@ void Mode_Behind(void)
 		
     if(start_B_lock1==0){
 	   T_LIFT_POSITION_R = Lift_R_Value1;//升降机构抬升
-	    Toward_Left();//追加
+	    //Toward_Left();//追加
 	   start_B_lock1=1;
     }
 	
@@ -350,7 +350,7 @@ void Mode_Behind(void)
 	if(un_T_B_lock4==0){
 	  if(B_continuity3==0){	
 	   if(un_time_count>5){
-	       T_GRAB_POSITION= Grab_Value3;// grab_baseline;//将弹药倒入弹药箱
+	       //T_GRAB_POSITION= Grab_Value3;// grab_baseline;//将弹药倒入弹药箱
 		   
 		   B_continuity3=1;
 		   B_continuity4=0;
@@ -378,7 +378,7 @@ void Mode_Behind(void)
 	if(un_T_B_lock6==0){
 	  if(B_continuity5==0){	
 	   if(un_time_count>10){
-		   Toward_Right();
+		   //Toward_Right();
 	       //Toward_Left();//向右移动连续取第二个弹药箱
 		   
 		   B_continuity5=1;
@@ -505,7 +505,7 @@ void Mode_Behind(void)
 	if(un_T_B_lock13==0){
 	  if(B_continuity11==0){	
 	    if(un_time_count>15){
-	        T_GRAB_POSITION= Grab_Value3;//grab_baseline;//将弹药倒入弹药箱
+	        //T_GRAB_POSITION= Grab_Value3;//grab_baseline;//将弹药倒入弹药箱
 			
 			B_continuity11=1;
 		    B_continuity12=0;
@@ -704,7 +704,7 @@ if(deadlock5==0){
 	if(un_O_B_lock4==0){
 	  if(B_continuity18==0){	
 	   if(N_time_count>5){
-	       T_GRAB_POSITION= Grab_Value3;//grab_baseline;//将弹药倒入弹药箱
+	       //T_GRAB_POSITION= Grab_Value3;//grab_baseline;//将弹药倒入弹药箱
 		   
 		   B_continuity18=1;
 		   B_continuity19=0;

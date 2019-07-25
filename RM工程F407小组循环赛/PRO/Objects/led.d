@@ -54,6 +54,7 @@
 .\objects\led.o: ..\SYS\rescue.h
 .\objects\led.o: ..\SYS\to_hero.h
 .\objects\led.o: ..\SYS\grab_check.h
+.\objects\led.o: ..\SYS\lift_check.h
 .\objects\led.o: ..\SYS\position_init.h
 .\objects\led.o: ..\SYS\quit_mode.h
 .\objects\led.o: ..\SYS\get_mode1.h

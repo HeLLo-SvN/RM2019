@@ -54,6 +54,7 @@
 .\objects\servo.o: ..\SYS\rescue.h
 .\objects\servo.o: ..\SYS\to_hero.h
 .\objects\servo.o: ..\SYS\grab_check.h
+.\objects\servo.o: ..\SYS\lift_check.h
 .\objects\servo.o: ..\SYS\position_init.h
 .\objects\servo.o: ..\SYS\quit_mode.h
 .\objects\servo.o: ..\SYS\get_mode1.h

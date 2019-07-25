@@ -54,6 +54,7 @@
 .\objects\get_mode2.o: ..\SYS\rescue.h
 .\objects\get_mode2.o: ..\SYS\to_hero.h
 .\objects\get_mode2.o: ..\SYS\grab_check.h
+.\objects\get_mode2.o: ..\SYS\lift_check.h
 .\objects\get_mode2.o: ..\SYS\position_init.h
 .\objects\get_mode2.o: ..\SYS\quit_mode.h
 .\objects\get_mode2.o: ..\SYS\get_mode1.h

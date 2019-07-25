@@ -3,6 +3,7 @@
 
 #include "stm32f4xx.h"
 
-void Position_Init(void);
+void GRAB_Position_Init(void);
+void LIFT_Position_Init(void);
 
 #endif

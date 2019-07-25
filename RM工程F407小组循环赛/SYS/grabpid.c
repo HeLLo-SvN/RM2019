@@ -28,7 +28,7 @@ void Grabpid_Init(void)
 	grab_Ex.errNow=0;
 /******外环位置环******/	
 	grab_Ex.errILim=0;//积分上限
-	grab_Ex.MaxOut=5000;//最大输出量
+	grab_Ex.MaxOut=6000;//最大输出量
 /**********************/	
 	grab_Ex.ctrOut=0;
 
@@ -37,7 +37,7 @@ void Grabpid_Init(void)
 	grab_In.kd=0;
 	grab_In.errNow=0;
 /******内环速度环******/
-	grab_In.errILim=5000;
+	grab_In.errILim=6000;
 	grab_In.MaxOut=30000;
 /**********************/
 	grab_In.ctrOut=0;

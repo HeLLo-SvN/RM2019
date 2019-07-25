@@ -1,8 +1,10 @@
 #include "main.h"
 
 extern double Booleans_Claw;
-extern double Booleans_Lift;
+extern double Booleans_Pop;
 extern double Booleans_Slide;
+extern double Booleans_Open;
+extern double Booleans_Trail;
 
 extern int high_Trigger;
 
@@ -15,19 +17,34 @@ void Testing(void){
 //     Loosen();
 // }
 // 
-// if(Booleans_Slide){
-//      Toward_Left();
+// if(Booleans_Pop){
+//      Pop();
 // }
 // else{
-//     Toward_Right();
+//     Withdraw();
 // }
 
-// if(Booleans_Lift){
-//      Extension();
+// if(Booleans_Slide){
+//     Extension();
 // }
 // else{
-//      Contraction();
+//     Contraction();
 // }
+// 
+// if(Booleans_Open){
+//      Open();
+// }
+// else{
+//     Close();
+// }
+
+// if(Booleans_Trail){
+//     Trail();
+// }
+// else{
+//     Fold();
+// } 
+ 
 /********************基于手动屏幕切换测试********************/
 // if(high_Trigger==0){
 //       Switch_Camera1();// GPIO_SetBits(GPIOD, GPIO_Pin_14)

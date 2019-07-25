@@ -54,6 +54,7 @@
 .\objects\stmgood.o: ..\SYS\rescue.h
 .\objects\stmgood.o: ..\SYS\to_hero.h
 .\objects\stmgood.o: ..\SYS\grab_check.h
+.\objects\stmgood.o: ..\SYS\lift_check.h
 .\objects\stmgood.o: ..\SYS\position_init.h
 .\objects\stmgood.o: ..\SYS\quit_mode.h
 .\objects\stmgood.o: ..\SYS\get_mode1.h

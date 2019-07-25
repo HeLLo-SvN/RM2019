@@ -17,12 +17,12 @@ void Task_HeroInterface(void){
 	interface_time_count++;
 	
 	   if(Lift_flag==1){
-	T_LIFT_POSITION_R=Lift_R_Value2;
+	T_LIFT_POSITION_R=Lift_R_Value1;
 		   Lift_flag=0;
 	   }
 	   if(pop_flag==1){
 	if(interface_time_count>100){
-	         Pop();
+//	         Pop();
 		   pop_flag=0;
 	  interface_time_count=0;
 		  X_supply_flag=1;

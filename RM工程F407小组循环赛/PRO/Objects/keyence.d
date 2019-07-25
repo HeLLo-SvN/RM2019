@@ -54,6 +54,7 @@
 .\objects\keyence.o: ..\SYS\rescue.h
 .\objects\keyence.o: ..\SYS\to_hero.h
 .\objects\keyence.o: ..\SYS\grab_check.h
+.\objects\keyence.o: ..\SYS\lift_check.h
 .\objects\keyence.o: ..\SYS\position_init.h
 .\objects\keyence.o: ..\SYS\quit_mode.h
 .\objects\keyence.o: ..\SYS\get_mode1.h

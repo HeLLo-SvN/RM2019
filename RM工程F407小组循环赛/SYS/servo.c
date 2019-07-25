@@ -11,7 +11,7 @@ extern int PRESS_L_lockplatform;
 //extern uint16_t x_servo_Position;
 //extern uint16_t y_servo_Position;
 /************舵机变量************/
-uint16_t x_servo_Init=100;
+uint16_t x_servo_Init=36;
 uint16_t y_servo_Init=30;
 
 void Send_Servo_Position(void){
@@ -26,18 +26,18 @@ void Send_Servo_Position(void){
 	    Y_Servo_Configuration(y_servo_Init);
 /***************YAW轴***************/	
  if(PRESS_R_lockplatform==0){	
-	if(RC_Ctl.mouse.x>0){
-		if(x_servo_Init==0){
-	        x_servo_Init=0;
-		}
-		else{
-		    x_servo_Init-=2;
-		}
-	}
+//	if(RC_Ctl.mouse.x>0){       //总决赛舵机右侧限位
+//		if(x_servo_Init==0){
+//	        x_servo_Init=0;
+//		}
+//		else{
+//		    x_servo_Init-=2;
+//		}
+//	}
 	
 	if(RC_Ctl.mouse.x<0){
-		if(x_servo_Init==220){
-	        x_servo_Init=220;
+		if(x_servo_Init==92){
+	        x_servo_Init=92;
 		}
 		else{
 		    x_servo_Init+=2;
@@ -47,11 +47,12 @@ void Send_Servo_Position(void){
  }
  else{
 	 if(PRESS_L_lockplatform==1){
-      x_servo_Init=100;
+      x_servo_Init=36;
+	  
 	 }	
      if(PRESS_L_lockplatform==0){
-	  x_servo_Init=220;
-	  y_servo_Init=20;
+	  x_servo_Init=250;
+	  y_servo_Init=34;
 	 }	 
  }
 
