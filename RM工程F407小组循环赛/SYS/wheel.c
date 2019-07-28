@@ -556,9 +556,13 @@ else
 		
 		   delta_upstair=0;
 			
-		   poseture_correct=3000;
+		   
 /**************************************************/			   
 	    }
+		
+		if(gyro_interrupt==0){
+		   poseture_correct=3000;
+		}
 		
 		//Toward_Left();
 	   	   
