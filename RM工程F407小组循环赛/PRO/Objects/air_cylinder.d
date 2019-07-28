@@ -63,3 +63,6 @@
 .\objects\air_cylinder.o: ..\SYS\gyropid.h
 .\objects\air_cylinder.o: ..\SYS\straight_angle.h
 .\objects\air_cylinder.o: ..\SYS\self_checking.h
+.\objects\air_cylinder.o: ..\SYS\adc.h
+.\objects\air_cylinder.o: ..\SYS\sickpid.h
+.\objects\air_cylinder.o: ..\SYS\sick_distance.h

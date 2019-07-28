@@ -63,3 +63,6 @@
 .\objects\grabpid.o: ..\SYS\gyropid.h
 .\objects\grabpid.o: ..\SYS\straight_angle.h
 .\objects\grabpid.o: ..\SYS\self_checking.h
+.\objects\grabpid.o: ..\SYS\adc.h
+.\objects\grabpid.o: ..\SYS\sickpid.h
+.\objects\grabpid.o: ..\SYS\sick_distance.h

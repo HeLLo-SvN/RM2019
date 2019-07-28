@@ -63,3 +63,6 @@
 .\objects\get_mode3.o: ..\SYS\gyropid.h
 .\objects\get_mode3.o: ..\SYS\straight_angle.h
 .\objects\get_mode3.o: ..\SYS\self_checking.h
+.\objects\get_mode3.o: ..\SYS\adc.h
+.\objects\get_mode3.o: ..\SYS\sickpid.h
+.\objects\get_mode3.o: ..\SYS\sick_distance.h

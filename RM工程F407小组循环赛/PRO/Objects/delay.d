@@ -63,3 +63,6 @@
 .\objects\delay.o: ..\SYS\gyropid.h
 .\objects\delay.o: ..\SYS\straight_angle.h
 .\objects\delay.o: ..\SYS\self_checking.h
+.\objects\delay.o: ..\SYS\adc.h
+.\objects\delay.o: ..\SYS\sickpid.h
+.\objects\delay.o: ..\SYS\sick_distance.h

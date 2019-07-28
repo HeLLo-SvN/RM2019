@@ -7,6 +7,7 @@ int Keyence;
 int main(void)
 {
 delay_init(168);
+//Adc_Init();//（总决赛新增初始化函数）
 Remote_Init();
 Chassispid_Init();
 Gyropid_Init();
@@ -43,7 +44,7 @@ while(1)
 	
           LED_BLUE_TOGGLE();
 	
-//	       Rc_Checking();//开场三分钟准备自检
+	       Rc_Checking();//开场三分钟准备自检
 
 //	       Servo_Reset();//舵机恢复出厂设置时使用
 	
@@ -53,7 +54,7 @@ while(1)
 //	touch_switch=Pop_Touch();//Claw_Touch()//Lift_Touch()
 //	Keyence=Right_Limit();//Left_Limit()
  
-//           Print_Test();//打印数据
+//            Print_Test();//打印数据
 	
  }
 

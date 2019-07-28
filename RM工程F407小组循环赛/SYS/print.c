@@ -80,7 +80,12 @@ extern PID_AbsoluteType  gyro_Angle;
 extern float B_GYRO_ANGLE;
 extern float INSTANTANEOUS;
 
+extern float B_GYRO_ANGLE_PITCH;//（总决赛新增变量）
+extern float T_GYRO_ANGLE_PITCH;//（总决赛新增变量）
+
 extern int Keyence;
+
+extern int Sick_Distance;//（总决赛新增变量）
 
 void Print_Test(void){
 
@@ -192,9 +197,14 @@ void Print_Test(void){
 //    printf("grab_baseline=%d\r\n",grab_baseline);
 /*********************陀螺仪角度测试*********************/
 //    printf("INSTANTANEOUS=%f\r\n",INSTANTANEOUS);
-//    printf("B_GYRO_ANGLE=%f\r\n",B_GYRO_ANGLE);
+//    printf("B_GYRO_ANGLE=%f\r\n",B_GYRO_ANGLE);   //YAW轴角度（绕Z轴）
 //	  
 //	  printf("ANGLE.errNow=%f\r\n",gyro_Angle.errNow);
 //	  printf("F_GYRO_ANGLE=%f\r\n",gyro_Angle.ctrOut);
-	  
+
+//   printf("B_GYRO_ANGLE_PITCH=%f\r\n",B_GYRO_ANGLE_PITCH);//PITCH轴角度（绕Y轴）
+//	 printf("T_GYRO_ANGLE_PITCH=%f\r\n",T_GYRO_ANGLE_PITCH);//PITCH轴角度（绕Y轴）
+/*********************Sick距离值测试*********************/
+//    printf("Sick_Distance=%d\r\n",Sick_Distance);
+
 }

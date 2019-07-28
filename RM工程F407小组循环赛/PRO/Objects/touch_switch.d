@@ -63,3 +63,6 @@
 .\objects\touch_switch.o: ..\SYS\gyropid.h
 .\objects\touch_switch.o: ..\SYS\straight_angle.h
 .\objects\touch_switch.o: ..\SYS\self_checking.h
+.\objects\touch_switch.o: ..\SYS\adc.h
+.\objects\touch_switch.o: ..\SYS\sickpid.h
+.\objects\touch_switch.o: ..\SYS\sick_distance.h

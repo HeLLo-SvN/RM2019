@@ -63,3 +63,6 @@
 .\objects\keyence.o: ..\SYS\gyropid.h
 .\objects\keyence.o: ..\SYS\straight_angle.h
 .\objects\keyence.o: ..\SYS\self_checking.h
+.\objects\keyence.o: ..\SYS\adc.h
+.\objects\keyence.o: ..\SYS\sickpid.h
+.\objects\keyence.o: ..\SYS\sick_distance.h

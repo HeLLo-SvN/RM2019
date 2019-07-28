@@ -63,3 +63,6 @@
 .\objects\can1.o: ..\SYS\gyropid.h
 .\objects\can1.o: ..\SYS\straight_angle.h
 .\objects\can1.o: ..\SYS\self_checking.h
+.\objects\can1.o: ..\SYS\adc.h
+.\objects\can1.o: ..\SYS\sickpid.h
+.\objects\can1.o: ..\SYS\sick_distance.h

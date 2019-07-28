@@ -63,3 +63,6 @@
 .\objects\to_hero.o: ..\SYS\gyropid.h
 .\objects\to_hero.o: ..\SYS\straight_angle.h
 .\objects\to_hero.o: ..\SYS\self_checking.h
+.\objects\to_hero.o: ..\SYS\adc.h
+.\objects\to_hero.o: ..\SYS\sickpid.h
+.\objects\to_hero.o: ..\SYS\sick_distance.h

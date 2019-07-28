@@ -63,3 +63,6 @@
 .\objects\chassispid.o: ..\SYS\gyropid.h
 .\objects\chassispid.o: ..\SYS\straight_angle.h
 .\objects\chassispid.o: ..\SYS\self_checking.h
+.\objects\chassispid.o: ..\SYS\adc.h
+.\objects\chassispid.o: ..\SYS\sickpid.h
+.\objects\chassispid.o: ..\SYS\sick_distance.h

@@ -63,3 +63,6 @@
 .\objects\usart6.o: ..\SYS\gyropid.h
 .\objects\usart6.o: ..\SYS\straight_angle.h
 .\objects\usart6.o: ..\SYS\self_checking.h
+.\objects\usart6.o: ..\SYS\adc.h
+.\objects\usart6.o: ..\SYS\sickpid.h
+.\objects\usart6.o: ..\SYS\sick_distance.h

@@ -327,6 +327,20 @@ extern int on_KILL;
 
 	extern int PID_SWITCH;//总决赛新增取弹模式PID的切换
 
+/**********SICK新增变量**********/ ///（总决赛追加）
+
+//extern int sick_time_count;//ADC每5ms采样计数变量（计数20次）
+
+//extern int Superposition_Sampling;
+//extern int Sampling;
+
+//extern int B_Sick_Distance;
+//extern int Sick_Distance;
+
+//extern int Sick_lock;
+//extern int Sample_lock;
+//extern int Zero_Clearing;
+
 void Quit_Mode(void)
 {
         if(R_quit_flag==0){
@@ -645,6 +659,19 @@ void Quit_Mode(void)
 	     on_buffer_lock18=1;
 	     on_buffer_lock19=1;		 
 /*******************************/
+
+/**********SICK新增变量*********/ ///（总决赛追加）
+//         sick_time_count=0;//ADC每5ms采样计数变量（计数20次）
+
+//         Superposition_Sampling=0;
+//         Sampling=0;
+
+//         B_Sick_Distance=0;
+//         Sick_Distance=0;
+
+//         Sick_lock=1;
+//         Sample_lock=1;
+//         Zero_Clearing=1;
 
 		 Action_Resetting();
 		 

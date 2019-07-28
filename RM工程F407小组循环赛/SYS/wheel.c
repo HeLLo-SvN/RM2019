@@ -50,6 +50,10 @@ extern int E_lockchassis_flag;//取弹底盘锁定
 int solenoid_valve_lock=1;//上岛电磁阀锁定
 int solenoid_valve_lock1=1;//下岛电磁阀锁定
 
+extern float B_GYRO_ANGLE_PITCH;//（总决赛新增变量用于姿态闭环）
+extern float T_GYRO_ANGLE_PITCH;
+extern int interrupt_P;//中断标志位
+int gyro_interrupt=1;
 
 void Wheel_Direction(void)
 {
@@ -70,6 +74,10 @@ void Wheel_Direction(void)
     int constant_upstair=0;
 /***上岛后轮补偿***/
 	int delta_upstair=0;
+/***上岛姿态矫正***/
+	int poseture_correct=0;
+/***上岛姿态判断***/	
+	float Gyro_delta=0;
 /***恒定速度下岛***/
 //    int constant_downstair=0;
 /***下岛后轮补偿***/
@@ -530,22 +538,43 @@ else
 /*****************恒定速度上岛逻辑*****************/ 
 	if(RC_Ctl.key.v&KEY_G)
     {
-	  constant_upstair=3600;
+		if(gyro_interrupt==1){
+	   constant_upstair=3600;
 		
 		delta_upstair=2000;
-			   	
+		}
+/*****************上岛姿态矫正逻辑*****************/ //（总决赛新增）		
+	    interrupt_P=0;//姿态监视中断标志位立即生效
+		
+	    Gyro_delta = B_GYRO_ANGLE_PITCH - T_GYRO_ANGLE_PITCH;
+		
+		if(Gyro_delta>50){
+			
+		   gyro_interrupt=0;
+			
+	       constant_upstair=0;
+		
+		   delta_upstair=0;
+			
+		   poseture_correct=3000;
+/**************************************************/			   
+	    }
+		
 		//Toward_Left();
 	   	   
-	   solenoid_valve_lock=0;
+//	   solenoid_valve_lock=0;
 	   
 	}
 	else{
-	  if(solenoid_valve_lock==0){
+//	  if(solenoid_valve_lock==0){
 	  
 	    //Toward_Right();
-		solenoid_valve_lock=1;
-	   
-      }
+//		solenoid_valve_lock=1;
+	   	
+//      }
+		gyro_interrupt=1;
+		
+		interrupt_P=1;//恢复动态姿态监视
 	}
 /*****************恒定速度下岛逻辑*****************/ 
 //	if(RC_Ctl.key.v&KEY_B)
@@ -592,8 +621,8 @@ else
 	
  T_TOP_L=x+y+z+f_w-b_s-l_a+r_d+l_m+r_m+constant_upstair+constant_grab-F_GYRO_ANGLE;//-constant_downstair+constant_grab_w+constant_grab_d
  T_TOP_R=x-y+z-f_w+b_s-l_a+r_d+l_m+r_m-constant_upstair+constant_grab-F_GYRO_ANGLE;//+constant_downstair-constant_grab_w+constant_grab_d
- T_DOWN_L=-x+y+z+f_w-b_s+l_a-r_d+l_m+r_m+constant_upstair-constant_grab-F_GYRO_ANGLE;//-constant_downstair+constant_grab_w-constant_grab_d
- T_DOWN_R=-x-y+z-f_w+b_s+l_a-r_d+l_m+r_m-constant_upstair-constant_grab-F_GYRO_ANGLE;//+constant_downstair-constant_grab_w-constant_grab_d
+ T_DOWN_L=-x+y+z+f_w-b_s-poseture_correct+l_a-r_d+l_m+r_m+constant_upstair-constant_grab-F_GYRO_ANGLE;//-constant_downstair+constant_grab_w-constant_grab_d
+ T_DOWN_R=-x-y+z-f_w+b_s+poseture_correct+l_a-r_d+l_m+r_m-constant_upstair-constant_grab-F_GYRO_ANGLE;//+constant_downstair-constant_grab_w-constant_grab_d
  T_MID_L=y+z+f_w-b_s+l_m+r_m+constant_upstair+delta_upstair-F_GYRO_ANGLE;//-constant_downstair-delta_downstair
  T_MID_R=-y+z-f_w+b_s+l_m+r_m-constant_upstair-delta_upstair-F_GYRO_ANGLE;//+constant_downstair+delta_downstair
  

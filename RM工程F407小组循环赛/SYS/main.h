@@ -50,7 +50,9 @@
 #include "gyropid.h"
 #include "straight_angle.h"
 #include "self_checking.h"
-
+#include "adc.h"
+#include "sickpid.h"
+#include "sick_distance.h"
 
 /************总决赛取弹参数***********/
 #define Lift_R_Value1 -440000   //上升至取弹高度

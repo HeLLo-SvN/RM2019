@@ -16,6 +16,11 @@ float LAST_GYRO_ANGLE=0.0f;
 float INSTANTANEOUS;
 int interrupt=1;//中断标志位
 
+Gyro_Angle_Pitch B_ANGLE_DATA_PITCH;
+float B_GYRO_ANGLE_PITCH=0.0f;
+float T_GYRO_ANGLE_PITCH=0.0f;
+int interrupt_P=1;//中断标志位
+
 void CAN1_Configuration(void)
 {
   CAN_InitTypeDef        can;
@@ -129,7 +134,7 @@ void CAN1_RX0_IRQHandler(void)
 	}
 /***************陀螺仪返回值***************/
 	  
-	  if(rx_message.StdId==0x401)
+	  if(rx_message.StdId==0x401)         //陀螺仪YAW轴（绕Z轴旋转）
       {
 		  LAST_GYRO_ANGLE=B_GYRO_ANGLE;
 		  
@@ -145,6 +150,22 @@ void CAN1_RX0_IRQHandler(void)
 		  }
 		  		  
 			  
+	}
+	  
+	  if(rx_message.StdId==0x402)         //陀螺仪PITCH轴（绕Y轴旋转）
+      {
+		   
+	      B_ANGLE_DATA_PITCH.angle_data_pitch[0]=rx_message.Data[0];
+		  B_ANGLE_DATA_PITCH.angle_data_pitch[1]=rx_message.Data[1];
+		  B_ANGLE_DATA_PITCH.angle_data_pitch[2]=rx_message.Data[2];
+		  B_ANGLE_DATA_PITCH.angle_data_pitch[3]=rx_message.Data[3];
+		  
+		  B_GYRO_ANGLE_PITCH=B_ANGLE_DATA_PITCH.angle_pitch;
+		   
+          if(interrupt_P==1){
+		  T_GYRO_ANGLE_PITCH=B_GYRO_ANGLE_PITCH;//动态设定基准值
+		  }
+         		  
 	}
 		
   }

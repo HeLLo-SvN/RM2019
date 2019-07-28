@@ -63,3 +63,6 @@
 .\objects\keyboard_value.o: ..\SYS\gyropid.h
 .\objects\keyboard_value.o: ..\SYS\straight_angle.h
 .\objects\keyboard_value.o: ..\SYS\self_checking.h
+.\objects\keyboard_value.o: ..\SYS\adc.h
+.\objects\keyboard_value.o: ..\SYS\sickpid.h
+.\objects\keyboard_value.o: ..\SYS\sick_distance.h

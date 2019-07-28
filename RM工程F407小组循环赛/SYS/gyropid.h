@@ -10,6 +10,13 @@ typedef union
 	
 }Gyro_Angle;
 
+typedef union
+{
+    uint8_t angle_data_pitch[4];
+	float angle_pitch;
+	
+}Gyro_Angle_Pitch;
+
 #define   GYROP     10
 #define   GYROI     0.2
 #define   GYROD     0

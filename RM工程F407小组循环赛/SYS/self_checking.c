@@ -8,6 +8,8 @@ extern int32_t T_ROTATE_POSITION;
 
 int Rc_Start=1;
 
+extern int grab_baseline;//建立抓取机构的基准位置
+
 void Rc_Checking(void)
 {
   if((RC_Ctl.rc.s1==DOWN)&&(RC_Ctl.rc.s2==DOWN))
@@ -21,9 +23,8 @@ void Rc_Checking(void)
 	  if((RC_Ctl.rc.s1==UP)&&(RC_Ctl.rc.s2==MID))
       {
 	              Clamp();
-//		       Toward_Left();
 		        Extension();
-		           //Pop();
+		            
 		           Open();
 		          Trail();
 		         
@@ -32,38 +33,39 @@ void Rc_Checking(void)
 	  if((RC_Ctl.rc.s1==UP)&&(RC_Ctl.rc.s2==DOWN))
       {
 	              Loosen();
-//		       Toward_Right();
 		        Contraction();
-		          //Withdraw();
+		          
 		           Close();
 		            Fold();
 	  }
 	  
 	  if((RC_Ctl.rc.s1==MID)&&(RC_Ctl.rc.s2==DOWN))
       {
-	       T_LIFT_POSITION_R=Lift_R_Value2;
-		     T_GRAB_POSITION=Grab_Value1;
+	       
+		  T_GRAB_POSITION=Grab_Value1+grab_baseline;
 	  }
 	  
 	  if((RC_Ctl.rc.s1==MID)&&(RC_Ctl.rc.s2==MID))
       {
-//	            T_ROTATE_POSITION=Rotate_Value1;
+		  
+            T_LIFT_POSITION_R=Lift_R_Value1;
+		                 Pop();
 	  }
 	  
 	  if((RC_Ctl.rc.s1==MID)&&(RC_Ctl.rc.s2==UP))
       {
-//	            T_ROTATE_POSITION=Rotate_Value3;
+           
+		               Withdraw();
 	  }
 	  
 	  if((RC_Ctl.rc.s1==DOWN)&&(RC_Ctl.rc.s2==UP))
       {
-//	            T_ROTATE_POSITION=Rotate_Value5;
+           T_GRAB_POSITION=Grab_Value3+grab_baseline;
 	  }
 	  
 	  if((RC_Ctl.rc.s1==DOWN)&&(RC_Ctl.rc.s2==MID))
       {
-//	       T_LIFT_POSITION_R=Lift_R_Value3 ;
-		     //T_GRAB_POSITION=Grab_Value3;
+           T_LIFT_POSITION_R=Lift_R_Value2;
 	  }
 	  
   }

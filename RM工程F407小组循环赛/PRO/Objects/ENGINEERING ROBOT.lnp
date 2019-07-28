@@ -41,12 +41,14 @@
 ".\objects\can2.o"
 ".\objects\tim6.o"
 ".\objects\usart2.o"
+".\objects\adc.o"
 ".\objects\pid.o"
 ".\objects\chassispid.o"
 ".\objects\liftpid.o"
 ".\objects\grabpid.o"
 ".\objects\rotatepid.o"
 ".\objects\gyropid.o"
+".\objects\sickpid.o"
 ".\objects\feedback.o"
 ".\objects\action.o"
 ".\objects\main.o"
@@ -74,6 +76,7 @@
 ".\objects\straight_angle.o"
 ".\objects\get_mode3.o"
 ".\objects\self_checking.o"
+".\objects\sick_distance.o"
 --library_type=microlib --strict --scatter ".\Objects\ENGINEERING ROBOT.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

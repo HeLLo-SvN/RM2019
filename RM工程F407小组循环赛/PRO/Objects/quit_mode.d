@@ -63,3 +63,6 @@
 .\objects\quit_mode.o: ..\SYS\gyropid.h
 .\objects\quit_mode.o: ..\SYS\straight_angle.h
 .\objects\quit_mode.o: ..\SYS\self_checking.h
+.\objects\quit_mode.o: ..\SYS\adc.h
+.\objects\quit_mode.o: ..\SYS\sickpid.h
+.\objects\quit_mode.o: ..\SYS\sick_distance.h

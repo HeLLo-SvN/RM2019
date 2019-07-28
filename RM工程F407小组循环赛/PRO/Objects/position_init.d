@@ -63,3 +63,6 @@
 .\objects\position_init.o: ..\SYS\gyropid.h
 .\objects\position_init.o: ..\SYS\straight_angle.h
 .\objects\position_init.o: ..\SYS\self_checking.h
+.\objects\position_init.o: ..\SYS\adc.h
+.\objects\position_init.o: ..\SYS\sickpid.h
+.\objects\position_init.o: ..\SYS\sick_distance.h
